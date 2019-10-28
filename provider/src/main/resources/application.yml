@@ -1,0 +1,32 @@
+server:
+  port: 8001
+
+mybatis:
+  # mybatis配置文件路径
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-packge: com.cramin.springcloud.provider.entities
+  # mapper映射文件
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml
+spring:
+  application:
+    name: springcloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://106.15.248.207:3306/springcloud
+    username: root
+    password: Cheng0919
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: dept-provider
+    #显示访问路径ip地址
+    prefer-ip-address: true
