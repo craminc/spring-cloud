@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS springcloud;
-USE springcloud;
+CREATE DATABASE IF NOT EXISTS springcloud_cp1;
+USE springcloud_cp1;
 
 CREATE TABLE dept(
     deptno BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,

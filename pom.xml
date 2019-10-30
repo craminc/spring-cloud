@@ -8,6 +8,10 @@
         <module>api</module>
         <module>consumer</module>
         <module>eureka</module>
+        <module>eureka-cp1</module>
+        <module>eureka-cp2</module>
+        <module>provider-cp1</module>
+        <module>provider-cp2</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -78,10 +82,26 @@
     </repositories>
 
     <build>
+        <finalName>spring-cloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
             </plugin>
         </plugins>
     </build>
